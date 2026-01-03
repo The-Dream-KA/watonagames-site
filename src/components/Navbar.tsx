@@ -1,43 +1,124 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
 export default function Navbar() {
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/terms", label: "Terms and Conditions" },
+    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/more", label: "More" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200 dark:bg-black/80 dark:border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">
-              Watona Games
-            </h1>
-          </div>
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
-              <a
-                href="#home"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="#games"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors"
-              >
-                Games
-              </a>
-              <a
-                href="#about"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors"
-              >
-                Contact
-              </a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-28 relative">
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center flex-shrink-0 absolute left-16">
+            <div className="relative h-56 w-[650px]">
+              <Image
+                src="https://res.cloudinary.com/dpag93lrl/image/upload/v1767478683/watona_games_logo_transparent_cropped_vquyhq.png"
+                alt="Watona Games Logo"
+                fill
+                className="object-contain object-left"
+                priority
+              />
             </div>
-          </div>
+          </Link>
+
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden lg:flex items-center mx-auto mr-20">
+            <ul className="flex items-center gap-8">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`
+                        text-xl font-semibold transition-all duration-200
+                        ${
+                          isActive
+                            ? "text-blue-600"
+                            : "text-gray-800 hover:text-blue-600 hover:underline decoration-2 underline-offset-4"
+                        }
+                      `}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-gray-100">
+            <nav className="flex flex-col gap-3">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`
+                      px-4 py-3 rounded-lg font-semibold transition-colors
+                      ${
+                        isActive
+                          ? "bg-blue-50 text-blue-600"
+                          : "text-gray-800 hover:bg-gray-50"
+                      }
+                    `}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
       </div>
-    </nav>
+    </header>
   );
 }
