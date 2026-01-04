@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />

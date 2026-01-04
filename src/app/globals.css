@@ -119,7 +119,26 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better mobile tap handling */
+  @media (hover: none) and (pointer: coarse) {
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  /* Prevent horizontal scrolling on mobile */
+  body {
+    overflow-x: hidden;
   }
 }

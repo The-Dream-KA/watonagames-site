@@ -23,15 +23,15 @@ const socialPlatforms = [
 
 export default function SocialLinks() {
     return (
-        <div className="flex space-x-4">
+        <div className="flex space-x-3 sm:space-x-4 justify-center sm:justify-start">
             {socialPlatforms.map((platform) => (
                 <a
                     key={platform.name}
                     href={platform.href}
-                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
                     aria-label={platform.name}
                 >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d={platform.path} />
                     </svg>
                 </a>
