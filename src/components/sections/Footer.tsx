@@ -1,5 +1,6 @@
 import FooterLinks from "@/components/ui/FooterLinks";
 import SocialLinks from "@/components/ui/SocialLinks";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -8,11 +9,15 @@ export default function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     {/* Company Info */}
                     <div className="sm:col-span-2 lg:col-span-1">
-                        <div className="flex items-center space-x-2 mb-3 sm:mb-4">
-                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#05DAFF] rounded-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-lg sm:text-xl">W</span>
+                        <div className="mb-3 sm:mb-4">
+                            <div className="relative h-20 w-56 sm:h-24 sm:w-64 md:h-28 md:w-72">
+                                <Image
+                                    src="https://res.cloudinary.com/dpag93lrl/image/upload/v1767478683/watona_games_logo_transparent_cropped_vquyhq.png"
+                                    alt="Watona Games Logo"
+                                    fill
+                                    className="object-contain object-left"
+                                />
                             </div>
-                            <h2 className="text-lg sm:text-xl font-bold text-white">Watona <span className="text-[#05DAFF]">Games</span></h2>
                         </div>
                         <p className="text-xs sm:text-sm text-gray-400">Creating joy through gaming</p>
                     </div>
