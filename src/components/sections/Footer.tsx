@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="py-8 sm:py-10 lg:py-12 bg-slate-900 text-gray-300">
             <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     {/* Company Info */}
                     <div className="sm:col-span-2 lg:col-span-1">
                         <div className="mb-3 sm:mb-4">
@@ -28,17 +28,7 @@ export default function Footer() {
                         links={[
                             { label: "About Us", href: "#about" },
                             { label: "Games", href: "#games" },
-                            { label: "Contact", href: "#contact" }
-                        ]}
-                    />
-
-                    {/* Resources */}
-                    <FooterLinks
-                        title="Resources"
-                        links={[
-                            { label: "Blog", href: "#" },
-                            { label: "Support", href: "#" },
-                            { label: "FAQ", href: "#" }
+                            { label: "Contact", href: "/contact" }
                         ]}
                     />
 
