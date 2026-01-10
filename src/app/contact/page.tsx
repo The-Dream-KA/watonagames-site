@@ -10,7 +10,7 @@ export default function ContactPage() {
                     </h1>
                     <div className="w-20 sm:w-24 h-1 bg-[#05DAFF] mx-auto mb-6"></div>
                     <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                        Have a question or want to work together? We'd love to hear from you!
+                        Have a question or want to work together? We&apos;d love to hear from you!
                     </p>
                 </div>
 
