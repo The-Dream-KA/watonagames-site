@@ -11,9 +11,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/terms", label: "Terms and Conditions" },
-    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/terms-of-service", label: "Terms and Conditions" },
+    { href: "/privacy-policy", label: "Privacy Policy" },
     { href: "/more", label: "More" },
   ];
 

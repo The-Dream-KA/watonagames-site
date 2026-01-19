@@ -26,7 +26,7 @@ export default function Footer() {
                     <FooterLinks
                         title="Company"
                         links={[
-                            { label: "About Us", href: "#about" },
+                            { label: "About Us", href: "/about-us" },
                             { label: "Games", href: "#games" },
                             { label: "Contact", href: "#contact" }
                         ]}
@@ -46,8 +46,8 @@ export default function Footer() {
                     <FooterLinks
                         title="Legal"
                         links={[
-                            { label: "Privacy Policy", href: "#" },
-                            { label: "Terms of Service", href: "#" },
+                            { label: "Privacy Policy", href: "/privacy-policy" },
+                            { label: "Terms of Service", href: "/terms-of-service" },
                             { label: "Cookie Policy", href: "#" }
                         ]}
                     />
