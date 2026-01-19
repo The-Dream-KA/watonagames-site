@@ -20,10 +20,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-28">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20 relative">
           {/* Logo Section - Mobile First */}
           <Link href="/" className="flex items-center flex-shrink-0 z-10">
-            <div className="relative h-12 w-32 sm:h-16 sm:w-44 md:h-20 md:w-56 lg:h-28 lg:w-80 xl:h-32 xl:w-96">
+            <div className="relative h-18 w-56 sm:h-24 sm:w-72 md:h-28 md:w-96 lg:h-32 lg:w-112">
               <Image
                 src="https://res.cloudinary.com/dpag93lrl/image/upload/v1767478683/watona_games_logo_transparent_cropped_vquyhq.png"
                 alt="Watona Games Logo"
@@ -35,7 +35,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden lg:flex items-center flex-1 justify-center ml-8">
+          <nav className="hidden lg:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <ul className="flex items-center gap-4 xl:gap-8">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -44,7 +44,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       className={`
-                        text-sm xl:text-lg font-semibold transition-all duration-200 whitespace-nowrap
+                        text-base lg:text-lg xl:text-xl font-semibold transition-all duration-200 whitespace-nowrap
                         ${isActive
                           ? "text-blue-600"
                           : "text-gray-800 hover:text-blue-600 hover:underline decoration-2 underline-offset-4"

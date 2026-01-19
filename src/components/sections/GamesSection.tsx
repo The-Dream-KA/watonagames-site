@@ -1,5 +1,4 @@
 import GameCard from "@/components/ui/GameCard";
-import ComingSoonCard from "@/components/ui/ComingSoonCard";
 
 export default function GamesSection() {
     return (
@@ -15,18 +14,17 @@ export default function GamesSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    <GameCard
-                        title="Smashy Drop"
-                        description="Stack, balance, and reach new heights in this addictive tower-building game!"
-                        genre="Casual • Puzzle"
-                        imageUrl="https://res.cloudinary.com/dpag93lrl/image/upload/v1767471181/smashy_drop_cover_1024x805_nhzdcz.png"
-                        imageAlt="Smashy Drop Game"
-                        playLink="#"
-                    />
-
-                    <ComingSoonCard />
-                    <ComingSoonCard />
+                <div className="flex justify-center">
+                    <div className="w-full max-w-md">
+                        <GameCard
+                            title="Smashy Drop"
+                            description="Stack, balance, and reach new heights in this addictive tower-building game!"
+                            genre="Casual • Puzzle"
+                            imageUrl="https://res.cloudinary.com/dpag93lrl/image/upload/v1767471181/smashy_drop_cover_1024x805_nhzdcz.png"
+                            imageAlt="Smashy Drop Game"
+                            playLink="#"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
