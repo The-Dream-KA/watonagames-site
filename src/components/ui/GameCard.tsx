@@ -12,16 +12,16 @@ interface GameCardProps {
 export default function GameCard({ title, description, genre, imageUrl, imageAlt, playLink }: GameCardProps) {
     return (
         <div className="group bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative w-full aspect-[4/3] bg-gray-50 overflow-hidden">
+            <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-50 overflow-hidden">
                 <Image
                     src={imageUrl}
                     alt={imageAlt}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 400px"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/30 transition-colors"></div>
             </div>
             <div className="p-4 sm:p-5 lg:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{title}</h3>

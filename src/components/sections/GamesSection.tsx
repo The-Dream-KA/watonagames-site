@@ -18,9 +18,9 @@ export default function GamesSection() {
                     <div className="w-full max-w-md">
                         <GameCard
                             title="Smashy Fall"
-                            description="Stack, balance, and reach new heights in this addictive tower-building game!"
-                            genre="Casual • Puzzle"
-                            imageUrl="https://res.cloudinary.com/dpag93lrl/image/upload/v1767471181/smashy_drop_cover_1024x805_nhzdcz.png"
+                            description="Tap to drop the ball through a spinning tower. Avoid black tiles. Clear levels!"
+                            genre="Casual"
+                            imageUrl="https://res.cloudinary.com/dpag93lrl/image/upload/v1769957621/smashy-fall-rect-rounded_1600x900_q7udyo.webp"
                             imageAlt="Smashy Fall Game"
                             playLink="#"
                         />
